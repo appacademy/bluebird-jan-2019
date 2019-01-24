@@ -21,6 +21,15 @@ class Chirp < ApplicationRecord
     foreign_key: :author_id,
     class_name: :User
 
+  has_many :likes,
+    primary_key: :id, # in our own class (has_many)
+    foreign_key: :chirp_id,
+    class_name: :Like
+  
+  has_many :likers,
+    through: :likes,
+    source: :user
+
   has_many :comments,
     primary_key: :id,
     foreign_key: :chirp_id,

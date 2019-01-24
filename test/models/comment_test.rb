@@ -4,10 +4,10 @@
 #
 #  id         :bigint(8)        not null, primary key
 #  body       :string           not null
-#  author_id  :integer          not null
 #  chirp_id   :integer          not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  author_id  :string
 #
 
 require 'test_helper'

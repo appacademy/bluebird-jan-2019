@@ -1,25 +1,23 @@
 # == Schema Information
 #
-# Table name: comments
+# Table name: likes
 #
 #  id         :bigint(8)        not null, primary key
-#  body       :string           not null
+#  user_id    :integer          not null
 #  chirp_id   :integer          not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  author_id  :string
 #
 
-class Comment < ApplicationRecord
-  validates :body, presence: true
-
-  belongs_to :author,
+class Like < ApplicationRecord
+  belongs_to :user,
     primary_key: :id,
-    foreign_key: :author_id,
+    foreign_key: :user_id, 
     class_name: :User
 
   belongs_to :chirp,
     primary_key: :id,
     foreign_key: :chirp_id,
     class_name: :Chirp
+
 end
