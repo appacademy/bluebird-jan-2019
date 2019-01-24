@@ -68,6 +68,10 @@ ActiveRecord::Base.transaction do
   Like.create!(user_id: hermione.id, chirp_id: chirp4.id)
   Like.create!(user_id: hermione.id, chirp_id: chirp5.id)
 
+  # Ron
+  Like.create!(user_id: ron.id, chirp_id: chirp3.id)
+  Like.create!(user_id: ron.id, chirp_id: chirp10.id)
+
   # Dumbledore
   Like.create!(user_id: dumbledore.id, chirp_id: chirp3.id)
   Like.create!(user_id: dumbledore.id, chirp_id: chirp4.id)
@@ -84,6 +88,6 @@ ActiveRecord::Base.transaction do
   # Comments
   Comment.create(body: 'Wow! What a magnificent play on words!', author_id: hermione.id, chirp_id: chirp10.id)
   Comment.create(body: 'The Nimbus 2000 is incredible - smoothest broom I\'ve ever flown on', author_id: harry.id, chirp_id: chirp10.id)
-  Comment.create(body: 'Lmaoooooooo @Harry have you seen this. It\'s bloody hilarious mate!', author_id: ron.id, chirp_id: chirp10.id)
+  Comment.create(body: 'Bloody hell @harry, have you seen this.', author_id: ron.id, chirp_id: chirp10.id)
   Comment.create(body: 'I will pay you money not to sell this to Harry Potter', author_id: draco.id, chirp_id: chirp10.id)
 end
