@@ -25,10 +25,10 @@ ActiveRecord::Schema.define(version: 2019_01_24_003223) do
 
   create_table "comments", force: :cascade do |t|
     t.string "body", null: false
+    t.integer "author_id", null: false
     t.integer "chirp_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "author_id"
     t.index ["author_id"], name: "index_comments_on_author_id"
     t.index ["chirp_id"], name: "index_comments_on_chirp_id"
   end

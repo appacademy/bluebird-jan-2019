@@ -13,11 +13,14 @@ ActiveRecord::Base.transaction do
   hagrid = User.create!(username: 'Rubeus Hagrid', age: 45, political_affiliation: "Giant", email: "hagrid@hogwarts.io")
   harry = User.create!(username: 'Harry Potter', age: 11, political_affiliation: "Gryffindor", email: "harry@hogwarts.io")
   hermione = User.create!(username: 'Hermione Granger', age: 11, political_affiliation: "Gryffindor", email: "hermione@hogwarts.io")
+  ron = User.create!(username: 'Ron Weasley', age: 11, political_affiliation: "Gryffindor", email: "ron@hogwarts.io")
   dumbledore = User.create!(username: "Albus Dumbledore", age: 93, political_affiliation: "Headmaster", email: "dumbledore@hogwarts.io")
   draco = User.create!(username: "Draco Malfoy", age: 11, political_affiliation: "Slytherin", email: "draco@hogwarts.io")
   nimbus = User.create!(username: "Nimbus", age: 45, email: "brooms@nimbus.io")
 
   Chirp.destroy_all
+
+  # Chirps
   chirp1 = Chirp.create!(author_id: hagrid.id, body: "You're a wizard, Harry.")
 
   chirp2 = Chirp.create!(author_id: harry.id, body: "I solemnly swear I am up to no good.")
@@ -37,6 +40,8 @@ ActiveRecord::Base.transaction do
 
   Like.destroy_all
 
+  # Likes
+  
   # Hagrid
   Like.create!(user_id: hagrid.id, chirp_id: chirp3.id)
   Like.create!(user_id: hagrid.id, chirp_id: chirp4.id)
@@ -75,4 +80,10 @@ ActiveRecord::Base.transaction do
   # Draco
   Like.create!(user_id: draco.id, chirp_id: chirp10.id)
   Like.create!(user_id: draco.id, chirp_id: chirp12.id)
+
+  # Comments
+  Comment.create(body: 'Wow! What a magnificent play on words!', author_id: hermione.id, chirp_id: chirp10.id)
+  Comment.create(body: 'The Nimbus 2000 is incredible - smoothest broom I\'ve ever flown on', author_id: harry.id, chirp_id: chirp10.id)
+  Comment.create(body: 'Lmaoooooooo @Harry have you seen this. It\'s bloody hilarious mate!', author_id: ron.id, chirp_id: chirp10.id)
+  Comment.create(body: 'I will pay you money not to sell this to Harry Potter', author_id: draco.id, chirp_id: chirp10.id)
 end

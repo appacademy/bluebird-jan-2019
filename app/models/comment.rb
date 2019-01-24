@@ -7,7 +7,7 @@
 #  chirp_id   :integer          not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  author_id  :string
+#  author_id  :string           not null
 #
 
 class Comment < ApplicationRecord
