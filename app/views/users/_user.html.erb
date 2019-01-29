@@ -1,0 +1,28 @@
+<ul>
+  <li>username:
+    <%= user.username %>
+  </li>
+  <% if action == :show %>
+    <li>political affiliation:
+      <%= user.political_affiliation %>
+    </li>
+    <li>age:
+      <%= user.age %>
+    </li>
+    <li>email:
+      <%= user.email %>
+    </li>
+  <% end %>
+  <% if action == :index %>
+    <a href="<%= user_url(user) %>">show me this wizard!</a>
+  <% elsif action == :show %>
+    <a href="<%= users_url %>">show me ALL the wizards!</a>
+  <% end %>
+  <br>
+  <a href="<%= edit_user_url(user) %>">Transfigure me!</a>
+  <br>
+  <form action="<%= user_url(user) %>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value="Avada Kadaveraaaa! Bam! Boom!">
+  </form>
+</ul>

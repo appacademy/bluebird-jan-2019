@@ -1,14 +1,23 @@
 class UsersController < ApplicationController
+    def new
+        @user = User.new
+    end
+
+    def edit
+        @user = User.find(params[:id]) 
+    end
+
     def index
-        users = User.all
-        render json: users
+        @users = User.all
+        # render json: users
     end
 
     def show
-        "cheese"
+        # "cheese"
         # debugger
-        user = User.find(params[:id])
-        render json: user
+        @user = User.find(params[:id])
+        # render :show # we don't need this line!
+        # render json: user
     end 
 
     def create
@@ -21,7 +30,8 @@ class UsersController < ApplicationController
         user = User.new(user_params)
 
         if user.save
-            render json: user
+            # render json: user
+            redirect_to user_url(user)
         else
             render json: user.errors.full_messages
         end
@@ -33,7 +43,8 @@ class UsersController < ApplicationController
         # debugger
 
         if user.update(user_params)
-            render json: user
+            # render json: user
+            redirect_to user_url(user)
         else
             render json: user.errors.full_messages, status: 422
         end 
@@ -41,9 +52,9 @@ class UsersController < ApplicationController
     
     def destroy
         user = User.find(params[:id])
-
         user.destroy
-        render json: user
+        # render json: user
+        redirect_to users_url
     end
 
     private
@@ -51,6 +62,7 @@ class UsersController < ApplicationController
     # params = {"user"=>{"age"=>"440", "email"=>"dobby@he.io" ...}, "controller"=>"users", "action"=>"update", "id"=>"8"}
 
     def user_params
-        params.require(:user).permit(:email, :username, :age)
+        # debugger
+        params.require(:user).permit(:email, :username, :political_affiliation, :age)
     end 
 end

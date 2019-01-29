@@ -48,7 +48,8 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0' #kabob-case
   gem 'pry-rails'
   gem 'annotate'
-  # gem 'better_errors'
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 group :test do

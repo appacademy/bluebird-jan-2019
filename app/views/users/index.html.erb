@@ -1,0 +1,11 @@
+<h2>Wizzy List</h2>
+<a href="<%= new_user_url %>">Create New Wizzy</a>
+
+<ul>
+  <% @users.each do |user| %>
+    <li>
+      <%= render 'user', user: user, action: :index %>
+    </li>
+    <br>
+  <% end %>
+</ul>
