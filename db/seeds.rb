@@ -10,13 +10,13 @@ ActiveRecord::Base.transaction do
   User.destroy_all
 
   # Wizards
-  hagrid = User.create!(username: 'Rubeus Hagrid', age: 45, political_affiliation: "Giant", email: "hagrid@hogwarts.io")
-  harry = User.create!(username: 'Harry Potter', age: 11, political_affiliation: "Gryffindor", email: "harry@hogwarts.io")
-  hermione = User.create!(username: 'Hermione Granger', age: 11, political_affiliation: "Gryffindor", email: "hermione@hogwarts.io")
-  ron = User.create!(username: 'Ron Weasley', age: 11, political_affiliation: "Gryffindor", email: "ron@hogwarts.io")
-  dumbledore = User.create!(username: "Albus Dumbledore", age: 93, political_affiliation: "Headmaster", email: "dumbledore@hogwarts.io")
-  draco = User.create!(username: "Draco Malfoy", age: 11, political_affiliation: "Slytherin", email: "draco@hogwarts.io")
-  nimbus = User.create!(username: "Nimbus", age: 45, email: "brooms@nimbus.io")
+  hagrid = User.create!(username: 'Rubeus Hagrid', age: 45, political_affiliation: "Giant", email: "hagrid@hogwarts.io", password: "password")
+  harry = User.create!(username: 'Harry Potter', age: 11, political_affiliation: "Gryffindor", email: "harry@hogwarts.io", password: "password")
+  hermione = User.create!(username: 'Hermione Granger', age: 11, political_affiliation: "Gryffindor", email: "hermione@hogwarts.io", password: "password")
+  ron = User.create!(username: 'Ron Weasley', age: 11, political_affiliation: "Gryffindor", email: "ron@hogwarts.io", password: "password")
+  dumbledore = User.create!(username: "Albus Dumbledore", age: 93, political_affiliation: "Headmaster", email: "dumbledore@hogwarts.io", password: "password")
+  draco = User.create!(username: "Draco Malfoy", age: 11, political_affiliation: "Slytherin", email: "draco@hogwarts.io", password: "password")
+  nimbus = User.create!(username: "Nimbus", age: 45, email: "brooms@nimbus.io", password: "password")
 
   Chirp.destroy_all
 
@@ -41,7 +41,7 @@ ActiveRecord::Base.transaction do
   Like.destroy_all
 
   # Likes
-  
+
   # Hagrid
   Like.create!(user_id: hagrid.id, chirp_id: chirp3.id)
   Like.create!(user_id: hagrid.id, chirp_id: chirp4.id)

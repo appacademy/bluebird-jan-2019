@@ -1,12 +1,13 @@
 <% if type == :new %>
   <% action_url = users_url %>
-  <% button_text = "Create Wizzy" %>
+  <% button_text = "Sign Up" %>
 <% elsif type == :edit %>
   <% action_url = user_url(user) %>
   <% button_text = "Transfigure Wizzy" %>
 <% end %>
 
 <form action="<%= action_url %>" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
   <% if type == :edit %>
     <input type="hidden" name="_method" value="patch">
   <% end %>
@@ -23,6 +24,10 @@
   <br>
   <label for="political_affiliation">Political Affiliation:
     <input type="text" name="user[political_affiliation]" value="<%= user.political_affiliation %>">
+  </label>
+  <br>
+  <label for="password">Password:
+    <input type="password" name="user[password]" value="<%= %>">
   </label>
   <br>
   <input type="submit" value="<%= button_text %>">

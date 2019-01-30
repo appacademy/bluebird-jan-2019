@@ -8,11 +8,12 @@ Rails.application.routes.draw do
   # delete '/users/:id', to: 'users#destroy'
 
   # resources :users, only: [:new, :edit] # opposite of except
-  resources :users do 
+  resources :users do
     # did create instead of index
-    
+
     resources :chirps, only: [:create]
-  end 
+  end
+  resource :session, only: [:new, :create, :destroy]
 
   resources :chirps, only: [:show]
 
