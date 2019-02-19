@@ -390,3 +390,9 @@ document.addEventListener('DOMContentLoaded', () => {
 7. Make sure `npm install`, `npm start` and `open index.html` work.
 
 8. Additionally, make sure `bundle install`, `rails db:setup` and `rails s` works (you can see the react app at `/`).
+
+9. You will probs need to add `gem jquery-rails` to Gemfile, and then add `//= require jquery` to `application.js` (no need for `jquery_ujs` in Rails >= 5.1 if you have `rails_ujs`). https://github.com/rails/jquery-rails
+
+* Note: you need `//= require jquery_ujs` to prevent InvalidAuthToken errors.
+
+10. You may need to modify the `create` action in the chirps controller (I had to change `user_id` to `author_id`).
