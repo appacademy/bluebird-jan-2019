@@ -13,10 +13,4 @@ const ChirpIndex = ({ chirps }) => (
   </ul>
 );
 
-const mapStateToProps = state => {
-  return {
-    chirps: selectAllChirps(state),
-  };
-};
-
-export default connect(mapStateToProps)(ChirpIndex);
+export default ChirpIndex;

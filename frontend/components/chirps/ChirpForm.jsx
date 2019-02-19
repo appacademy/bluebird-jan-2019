@@ -14,6 +14,7 @@ class ChirpForm extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
+
   handleChange(e) {
     const body = e.currentTarget.value;
     this.setState({
@@ -44,10 +45,5 @@ class ChirpForm extends React.Component {
     );
   }
 }
-const mapDispatchToProps = dispatch => {
-  return {
-    receiveChirp: chirp => dispatch(receiveChirp(chirp)),
-  };
-};
 
-export default connect(null, mapDispatchToProps)(ChirpForm);
+export default ChirpForm;
