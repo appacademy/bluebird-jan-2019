@@ -1,8 +1,8 @@
 {
-  "name": "BlueBird",
+  "name": "bluebird",
   "private": true,
-  "script": {
-    "webpack": "webpack --watch --mode=development"
+  "scripts": {
+    "start": "webpack --watch --mode=development"
   },
   "dependencies": {
     "react": "^16.8.2",
