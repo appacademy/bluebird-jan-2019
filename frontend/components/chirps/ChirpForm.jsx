@@ -5,7 +5,7 @@ import { receiveChirp } from '../../actions/chirpActions';
 
 import uniqueId from '../../utils/uniqueId';
 
-class ChirpIndex extends React.Component {
+class ChirpForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -50,4 +50,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(null, mapDispatchToProps)(ChirpIndex);
+export default connect(null, mapDispatchToProps)(ChirpForm);
